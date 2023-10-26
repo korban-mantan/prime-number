@@ -1,0 +1,78 @@
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100dvw;
+  height: 100dvh;
+  display: grid;
+  place-items: center;
+  background-color: #072c3d;
+  color: #dafffb;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* ==========Card styling============= */
+.card-container {
+  background-color: #04364a;
+  width: 35%;
+  height: 60%;
+  display: grid;
+  justify-items: center;
+  border-radius: 9px;
+  box-shadow: 8px 4px 4px #1d1d1d;
+}
+
+.card-container a {
+  color: #dafffb;
+  text-decoration: underline;
+}
+
+.card-header {
+  width: 60%;
+  height: fit-content;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid #ddd;
+}
+
+.card-body{
+    width: 100%;
+    display: grid;
+    justify-items: center;
+}
+
+.check-prime{
+    top: -10rem;
+}
+
+.output-text {
+  font-size: 2rem;
+}
+
+.input-container {
+  width: 100%;
+  display: grid;
+  justify-items: center;
+  gap: 0.2rem;
+}
+
+.main-button {
+  width: 15.5rem;
+}
+.input-number {
+  width: 15rem;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .card-container {
+    width: 80%;
+  }
+}

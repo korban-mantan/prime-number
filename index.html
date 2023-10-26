@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prime number checker & generator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="card-container">
+      <div class="card-header">
+        <a href="#" id="goto-prime-checker" class="card-header-item"
+          >Prime Number Checker</a
+        >
+        <a href="#" id="goto-prime-generator" class="card-header-item"
+          >Prime Number Generator</a
+        >
+      </div>
+      <div class="card-body">
+        <div class="prime-checker">
+          <form class="input-container" id="check-prime-form">
+            <span id="checker-output-text" class="output-text"
+              >Result will be shown here</span
+            >
+            <input
+              type="number"
+              name="input-number"
+              id="input-number"
+              class="input-number"
+              placeholder="Insert your number here"
+            />
+            <button class="main-button">Check Number</button>
+          </form>
+        </div>
+        <div class="prime-generator hidden">
+          <form class="input-container" id="generate-prime-form">
+            <textarea
+              name="generated-output"
+              id="generated-output"
+              cols="20"
+              rows="5"
+              disabled
+            ></textarea>
+            <label for="starting-number">Start form : </label>
+            <input
+              type="number"
+              name="starting-number"
+              id="starting-number"
+              class="input-number"
+              placeholder="Insert your number here"
+            />
+            <label for="end-number">To : </label>
+            <input
+              type="number"
+              name="end-number"
+              id="end-number"
+              class="input-number"
+              placeholder="Insert your number here"
+            />
+            <button class="main-button">Check Number</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
