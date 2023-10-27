@@ -1,3 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+::placeholder {
+  color: #fff;
+}
+
 html {
   margin: 0;
   padding: 0;
@@ -13,58 +31,106 @@ body {
   color: #dafffb;
   overflow: hidden;
   text-align: center;
+  font-family: 'Poppins', sans-serif;
 }
 
 /* ==========Card styling============= */
 .card-container {
   background-color: #04364a;
-  width: 35%;
-  height: 60%;
-  display: grid;
-  justify-items: center;
+  width: 30%;
+  height: calc(100dvh * 70%);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
   border-radius: 9px;
   box-shadow: 8px 4px 4px #1d1d1d;
+  overflow: auto;
 }
 
 .card-container a {
+  margin-bottom: 0.5rem;
+  font-size: 16pt;
   color: #dafffb;
   text-decoration: underline;
 }
 
 .card-header {
-  width: 60%;
+  width: 100%;
   height: fit-content;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   border-bottom: 2px solid #ddd;
 }
 
-.card-body{
-    width: 100%;
-    display: grid;
-    justify-items: center;
+.card-body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.check-prime{
-    top: -10rem;
+.prime-generator{
+  margin-top: -1.5rem;
+  position: relative;
+}
+.warning{
+  position: absolute;
+  width: 100%;
+  background: #d6cb32;
+  color: #fff;
+}
+.prime-checker{
+  margin-top: 5rem;
 }
 
+.generated-output{
+  width: 16rem;
+  font-size: 12pt;
+  border-radius: 4px;
+  color: #fff;
+  resize: none;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+}
 .output-text {
   font-size: 2rem;
 }
 
 .input-container {
   width: 100%;
-  display: grid;
-  justify-items: center;
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 0.2rem;
 }
 
-.main-button {
-  width: 15.5rem;
-}
 .input-number {
   width: 15rem;
+  background: transparent;
+  padding: .5rem;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  outline: none;
+}
+
+
+.main-button {
+  width: 16rem;
+  background: #14b8a6;
+  padding: .5rem 0 .5rem 0;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+}
+
+.main-button:active {
+  background: #535050;
+  color: #e7e5e5;
 }
 
 .hidden {
@@ -73,6 +139,17 @@ body {
 
 @media (max-width: 768px) {
   .card-container {
-    width: 80%;
+    width: 80%
+  }
+}
+
+.fade-in{
+  opacity: 0;
+  animation: fade-in .5s ease-in forwards;
+}
+
+@keyframes fade-in {
+  100% {
+    opacity: 1;
   }
 }

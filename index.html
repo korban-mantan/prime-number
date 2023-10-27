@@ -18,10 +18,10 @@
       </div>
       <div class="card-body">
         <div class="prime-checker">
+          <span id="checker-output-text" class="output-text"
+            >Result will be shown here</span
+          >
           <form class="input-container" id="check-prime-form">
-            <span id="checker-output-text" class="output-text"
-              >Result will be shown here</span
-            >
             <input
               type="number"
               name="input-number"
@@ -33,10 +33,12 @@
           </form>
         </div>
         <div class="prime-generator hidden">
+          <div class="hidden warning"><h3>Please enter a valid number.</h3></div>
           <form class="input-container" id="generate-prime-form">
             <textarea
               name="generated-output"
               id="generated-output"
+              class="generated-output"
               cols="20"
               rows="5"
               disabled
@@ -47,7 +49,7 @@
               name="starting-number"
               id="starting-number"
               class="input-number"
-              placeholder="Insert your number here"
+              placeholder="Insert your starting number"
             />
             <label for="end-number">To : </label>
             <input
@@ -55,7 +57,7 @@
               name="end-number"
               id="end-number"
               class="input-number"
-              placeholder="Insert your number here"
+              placeholder="Insert your last number"
             />
             <button class="main-button">Check Number</button>
           </form>

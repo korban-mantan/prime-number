@@ -17,12 +17,14 @@ const generatorBody = document.querySelector("div.prime-generator");
 gotoGenerate.onclick = (event) => {
   event.preventDefault();
   generatorBody.classList.remove("hidden");
+  generatorBody.classList.add("fade-in");
   checkerBody.classList.add("hidden");
 };
 
 gotoCheck.onclick = (event) => {
   event.preventDefault();
   checkerBody.classList.remove("hidden");
+  checkerBody.classList.add("fade-in");
   generatorBody.classList.add("hidden");
 };
 
@@ -32,6 +34,7 @@ checkPrimeForm.onsubmit = (event) => {
   outputText.textContent = checkPrimeNumber(inputValue)
     ? inputValue + " is a prime number"
     : inputValue + " is not a prime number";
+  console.log(inputValue + checkPrimeNumber(inputValue));
 };
 generatePrimeForm.onsubmit = (event) => {
   event.preventDefault();
@@ -40,28 +43,32 @@ generatePrimeForm.onsubmit = (event) => {
   );
   const endNumber = Number(document.querySelector("#end-number").value);
   const generatedPrime = [];
-
-  for (let num = startingNumber; num <= endNumber; num++) {
-    if (checkPrimeNumber(num)) {
-      generatedPrime.push(num);
+  const warning = document.querySelector(".warning")
+  if (endNumber < startingNumber) {
+    warning.classList.remove("hidden")
+  } else {
+    warning.classList.add("hidden")
+    for (let num = startingNumber; num <= endNumber; num++) {
+      if (checkPrimeNumber(num)) {
+        generatedPrime.push(num);
+      }
     }
-  }
 
-  generatedOutput.value = generatedPrime.join("\n");
+    generatedOutput.value = generatedPrime.join("\n");
+  }
 };
 
 const checkPrimeNumber = (a) => {
-  if (a === 2) { 
+  if (a == 2) {
     return true;
-  } else if (a <= 1 || a % 2 === 0) {
+  } else if (a <= 1 || a % 2 == 0) {
     return false;
   }
 
   for (let i = 2; i <= Math.sqrt(a); i++) {
-    if (a % i === 0) {
+    if (a % i == 0) {
       return false;
     }
   }
   return true;
 };
-
